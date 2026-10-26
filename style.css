@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+
+    background:
+        radial-gradient(ellipse at top, #263e70 0%, transparent 60%),
+        linear-gradient(135deg, #07152e, #102b4d, #050d20);
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    min-height: 720px;
+    padding: 42px 25px 28px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 130, 0.55);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(circle at 50% 65%,
+        rgba(35, 88, 113, 0.55), transparent 45%),
+        linear-gradient(180deg, #142b50, #07172d);
+
+    box-shadow:
+        0 0 35px rgba(105, 177, 255, 0.18),
+        inset 0 0 30px rgba(255, 255, 255, 0.04);
+
+    animation: appear 1.2s ease;
+}
+
+h1 {
+    margin-top: 22px;
+    font-size: clamp(44px, 10vw, 68px);
+    line-height: 1.12;
+    font-weight: normal;
+    color: #ffdf8a;
+    text-shadow: 0 0 14px rgba(255, 208, 100, 0.3);
+}
+
+.message {
+    max-width: 340px;
+    margin: 18px auto 0;
+    color: #dce7f5;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.tree {
+    position: relative;
+    width: 250px;
+    height: 280px;
+    margin: 22px auto 0;
+}
+
+.branch {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: solid transparent;
+    border-right: solid transparent;
+    border-bottom: solid #167453;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+.branch-1 {
+    top: 27px;
+    border-left-width: 36px;
+    border-right-width: 36px;
+    border-bottom-width: 75px;
+    border-bottom-color: #3ca778;
+}
+
+.branch-2 {
+    top: 65px;
+    border-left-width: 62px;
+    border-right-width: 62px;
+    border-bottom-width: 90px;
+    border-bottom-color: #258b62;
+}
+
+.branch-3 {
+    top: 105px;
+    border-left-width: 86px;
+    border-right-width: 86px;
+    border-bottom-width: 100px;
+    border-bottom-color: #167453;
+}
+
+.branch-4 {
+    top: 145px;
+    border-left-width: 108px;
+    border-right-width: 108px;
+    border-bottom-width: 105px;
+    border-bottom-color: #0e5b49;
+}
+
+.star {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 30px;
+    height: 30px;
+    background: #ffdf8a;
+
+    clip-path: polygon(
+        50% 0%,
+        62% 35%,
+        100% 35%,
+        70% 57%,
+        82% 95%,
+        50% 73%,
+        18% 95%,
+        30% 57%,
+        0% 35%,
+        38% 35%
+    );
+
+    filter: drop-shadow(0 0 8px #ffd45c);
+    animation: twinkle 1.5s infinite alternate;
+}
+
+.ornament {
+    position: absolute;
+    z-index: 3;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px currentColor;
+    animation: twinkle 1.8s infinite alternate;
+}
+
+.ornament-1 {
+    top: 83px;
+    left: 103px;
+    color: #ffdb75;
+    background: #ffdb75;
+}
+
+.ornament-2 {
+    top: 125px;
+    left: 72px;
+    color: #ff7189;
+    background: #ff7189;
+    animation-delay: 0.4s;
+}
+
+.ornament-3 {
+    top: 142px;
+    right: 70px;
+    color: #80dfff;
+    background: #80dfff;
+    animation-delay: 0.8s;
+}
+
+.ornament-4 {
+    top: 180px;
+    left: 45px;
+    color: #ffdb75;
+    background: #ffdb75;
+    animation-delay: 0.3s;
+}
+
+.ornament-5 {
+    top: 190px;
+    right: 47px;
+    color: #ff7189;
+    background: #ff7189;
+    animation-delay: 1s;
+}
+
+.ornament-6 {
+    top: 225px;
+    left: 91px;
+    color: #80dfff;
+    background: #80dfff;
+    animation-delay: 0.6s;
+}
+
+.ornament-7 {
+    top: 231px;
+    right: 92px;
+    color: #ffdb75;
+    background: #ffdb75;
+    animation-delay: 1.2s;
+}
+
+.trunk {
+    position: absolute;
+    z-index: 1;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 42px;
+    border-radius: 3px;
+    background: #79502f;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.65;
+        filter: brightness(0.85);
+    }
+
+    to {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
